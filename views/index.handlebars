@@ -1,0 +1,19 @@
+<form action="/users" method="post">
+    <input type="text" name="username">
+    <input type="submit">
+</form>
+
+<div>
+    {{#each users}}
+    <div style="border:1px solid #eee;float:left;margin:5px;padding:5px; background-color: rgb(255, 249, 67);">
+        {{username}}
+        <form action="/task/{{id}}" method="post">
+            <input type="text" name="title">
+            <input type="submit">
+        </form>
+        {{#each Tasks}}
+            {{title}}<br>
+        {{/each}}
+    </div>
+    {{/each}}
+</div>
