@@ -6,13 +6,13 @@
 <div>
     {{#each users}}
     <div style="border:1px solid #eee;float:left;margin:5px;padding:5px; background-color: rgb(255, 249, 67);">
-        {{username}}
+        {{username}} <a href="/deluser/{{id}}">X</a>
         <form action="/task/{{id}}" method="post">
             <input type="text" name="title">
             <input type="submit">
         </form>
         {{#each Tasks}}
-            {{title}}<br>
+            {{title}}<a href="/deltask/{{id}}">X</a><br>
         {{/each}}
     </div>
     {{/each}}

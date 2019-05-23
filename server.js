@@ -32,6 +32,28 @@ app.post('/task/:id', (req, res) =>
     }).then(() => res.redirect('/'))
 );
 
+app.get ('/deluser/:id', (req, res)=> {
+  User.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function() {
+    res.redirect ('/')
+  });
+  
+})
+
+app.get ('/deltask/:id', (req, res)=> {
+  Task.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function() {
+    res.redirect ('/')
+  });
+  
+})
+
 app.listen(5000, () => console.log('Listening on port 5000'));
 
 
